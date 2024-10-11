@@ -2,7 +2,7 @@ import React from "react";
 import "./Train.css";
 
 const Train = ({ train }) => {
-  const isOnTime = train.DELAY === "T0S";
+  const isOnTime = train.delay === "T0S";
   const waitingTime =  train.waitingTime.split(" ")[0];
   const capitalStation = capitalizeWords(train.station);
   const capitalDest = capitalizeWords(train.destination);
@@ -15,7 +15,7 @@ const Train = ({ train }) => {
           </span>
           <div className="detailsContainer">
             <span className="iconContainer">
-              <span className="lineBadge">{train.line}</span>
+              <span className="line">{train.line}</span>
             </span>
             <span className={`status ${isOnTime ? "on-time" : "delayed"}`}>
               {isOnTime ? "On time" : "Delayed"}

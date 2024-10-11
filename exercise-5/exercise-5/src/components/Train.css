@@ -31,7 +31,7 @@
   align-items: center;
 }
 
-.lineBadge {
+.line {
   background-color: #a18b0d;
   color: white;
   padding: 3px 8px;
@@ -56,12 +56,10 @@
 
 .status.on-time {
   color: green;
-  background-color: #e8f9e8;
 }
 
 .status.delayed {
   color: red;
-  background-color: #f8d7da;
 }
 
 .waitingTime {

@@ -21,6 +21,27 @@ export default function LinesPage() {
     };
     fetchData();
   }, []);
+  const renderTrainButtons = () => {
+    if (currColor === "green" || currColor === "blue") {
+      return (
+        <>
+          <button>Arriving</button>
+          <button>Scheduled</button>
+          <button>Eastbound</button>
+          <button>Westbound</button>
+        </>
+      );
+    } else {
+      return (
+        <>
+          <button>Arriving</button>
+          <button>Scheduled</button>
+          <button>Northbound</button>
+          <button>Southbound</button>
+        </>
+      );
+    }
+  };
 
   return (
     <div>
@@ -31,11 +52,7 @@ export default function LinesPage() {
         </div>
         <div className="trainListContainer">
           <div className="trainButtons">
-            <button>Arriving</button>
-            <button>Scheduled</button>
-            <button>Southbound</button>
-            <button>Westbound</button>
-            {/* Additional buttons can be added here */}
+            {renderTrainButtons()}
           </div>
           <div className="trainList">
             <TrainList line={currColor} data={trainData} />
