@@ -1,0 +1,15 @@
+.button {
+    margin-bottom: 1em;
+    padding: 1em;
+    border-bottom: 1px solid #ccc;
+    color: white;
+}
+.navbar-buttons{
+    color: white;
+}
+.navbar{
+    background-color:black;
+    width: 100%;
+    padding: 10px;
+    border-left: 0px;
+}
