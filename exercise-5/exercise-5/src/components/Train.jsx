@@ -23,7 +23,7 @@ const Train = ({ train }) => {
           </div>
         </div>
         <div className="waitingTime">
-        <span className="waitingTimeNumber">{waitingTime}</span>
+        <span className="waitingTimeNum">{waitingTime}</span>
               {waitingTime !== "Arriving" && (
                 <span className="minutes">min</span>
               )}
