@@ -1,20 +1,13 @@
-import React, { useState, useEffect } from "react";
+import { useState, useEffect } from "react";
 import axios from "axios";
 import NavBar from "../components/NavBar";
 import TrainList from "../components/TrainList";
 import "./LinesPage.css";
 
-const fetchTrainData = async () => {
-  const response = await axios.get("http://localhost:5000/api/trains");
-  return response.data;
-};
+const fetchStationData = async () => await axios.get("http://localhost:5000/api/stations");
+const fetchTrainData = async () => await axios.get("http://localhost:5000/api/trains");
 
-const fetchStationData = async () => {
-  const response = await axios.get("http://localhost:5000/api/stations");
-  return response.data;
-};
-
-const LinesPage = () => {
+export default function LinesPage() {
   const [currColor, setCurrColor] = useState("gold");
   const [stationData, setStationData] = useState([]);
   const [trainData, setTrainData] = useState([]);
@@ -23,15 +16,15 @@ const LinesPage = () => {
     const fetchData = async () => {
       const stations = await fetchStationData();
       const trains = await fetchTrainData();
-      setStationData(stations); 
-      setTrainData(trains); 
+      setStationData(stations.data);
+      setTrainData(trains.data);
     };
     fetchData();
   }, []);
 
   return (
     <div>
-      <h1 className="title">GOLD</h1>
+      <h1 className="title">{currColor.toUpperCase()}</h1>
       <div className="linesPageContainer">
         <div className="navBar">
           <NavBar color={currColor} data={stationData} />
@@ -51,6 +44,4 @@ const LinesPage = () => {
       </div>
     </div>
   );
-};
-
-export default LinesPage;
+}
