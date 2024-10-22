@@ -1,0 +1,23 @@
+#root {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 2rem;
+  text-align: center;
+}
+
+.app {
+  display: flex;              
+  justify-content: flex-start; 
+}
+
+.sidebar {
+  width: 220px;              
+  background-color: #f4f4f4;  
+}
+
+.content {
+  padding: 20px;
+  flex: 1;                    
+  margin-left: 20px;        
+}
+

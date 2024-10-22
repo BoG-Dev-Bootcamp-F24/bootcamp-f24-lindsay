@@ -1,0 +1,25 @@
+.trainButtons {
+    display: flex;
+    justify-content: center;
+    margin: 1rem 0;
+    
+  }
+  
+  .train-button {
+    background-color: #c5c2c2; 
+    color: black;
+    padding: 10px 20px;
+    margin: 0 5px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  .train-button:hover {
+    background-color: #cad3ca; 
+  }
+
+  .train-button.active {
+    background-color: pink;
+  }
+  

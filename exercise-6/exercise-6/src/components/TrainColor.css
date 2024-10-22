@@ -1,0 +1,31 @@
+.buttonContainer {
+    display: flex;
+    flex-direction: row;
+    gap: 1em; 
+}
+
+.button {
+    margin-bottom: 1em;
+    padding: 1em;
+    border-bottom: 1px solid #ccc;
+    color: white;
+}
+#train-green {
+    background-color: green;
+    color: white; 
+}
+
+#train-gold {
+    background-color: gold;
+    color: black; 
+}
+
+#train-red {
+    background-color: red;
+    color: white; 
+}
+
+#train-blue {
+    background-color: blue;
+    color: white; 
+}

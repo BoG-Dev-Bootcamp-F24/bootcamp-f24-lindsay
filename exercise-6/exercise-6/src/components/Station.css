@@ -1,0 +1,32 @@
+.scontainer {
+    margin-bottom: 1em;
+    padding: 1em;
+    border-bottom: 1px solid #ffffff;
+    background-color: black;
+}
+  .stationContainer {
+    display: flex;
+    justify-content: space-between; 
+    font-size: 17px;
+    padding-left: 10px; 
+    color: white;
+    background-color: black;
+    padding: 1em;
+    border: none;
+    cursor: pointer;
+    width: 100%;
+}
+.stationContainer:hover {
+    background-color: rgba(241, 175, 212, 0.833);
+}
+
+.stationContainer.selected{
+  background-color: pink;
+  color: white;
+}
+
+.button{
+  background-color:black;
+  color: black;
+  flex: stretch;
+}
