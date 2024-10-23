@@ -1,11 +1,30 @@
-import React from "react";
 import "./Train.css";
 
-const Train = ({ train }) => {
+interface TrainProps {
+  train: {
+    line: string;
+    station: string;
+    destination: string;
+    delay: string;
+    waitingTime: string;
+  };
+}
+
+const Train = ({ train }: TrainProps) => {
   const isOnTime = train.delay === "T0S";
-  const waitingTime =  train.waitingTime.split(" ")[0];
+  const waitingTime = train.waitingTime.split(" ")[0];
+
+  const capitalizeWords = (str: string) => {
+    return str
+      .toLowerCase()
+      .split(" ")
+      .map((word) => word.charAt(0).toUpperCase() + word.slice(1))
+      .join(" ");
+  };
+
   const capitalStation = capitalizeWords(train.station);
   const capitalDest = capitalizeWords(train.destination);
+
   return (
     <div className="container">
       <div className="trainContainer">
@@ -23,22 +42,12 @@ const Train = ({ train }) => {
           </div>
         </div>
         <div className="waitingTime">
-        <span className="waitingTimeNum">{waitingTime}</span>
-              {waitingTime !== "Arriving" && (
-                <span className="minutes">min</span>
-              )}
-            </div>
+          <span className="waitingTimeNum">{waitingTime}</span>
+          {waitingTime !== "Arriving" && <span className="minutes">min</span>}
+        </div>
       </div>
     </div>
   );
 };
 
-function capitalizeWords(str) {
-    return str
-      .toLowerCase()
-      .split(' ')
-      .map(word => word.charAt(0).toUpperCase() + word.slice(1))
-      .join(' ');
-  }
-  
 export default Train;
